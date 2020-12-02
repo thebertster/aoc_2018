@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 def reduce_polymer(polymer_string, skip_unit=None):
     polymer = list(polymer_string)
     char_to_check = 0
@@ -29,6 +30,7 @@ def reduce_polymer(polymer_string, skip_unit=None):
         else:
             char_to_check += 1
     return len(polymer)
+
 
 puzzle = (2018, 5)
 

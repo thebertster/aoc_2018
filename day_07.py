@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 def solve_puzzle(dependencies):
     prerequisites = {}
     all_steps = set()
@@ -23,6 +24,7 @@ def solve_puzzle(dependencies):
     aoc.print_solution(2, do_work(all_steps, unavailable_steps.copy(),
                                   prerequisites, num_workers=5,
                                   time_calc=lambda x: 60 + x))
+
 
 def do_work(all_steps, unavailable_steps, prerequisites,
             num_workers=1, time_calc=lambda x: 1):
@@ -58,6 +60,7 @@ def do_work(all_steps, unavailable_steps, prerequisites,
     return second, step_order
 
 # Main Program
+
 
 puzzle = (2018, 7)
 

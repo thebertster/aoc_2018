@@ -1,8 +1,10 @@
 from lib.aoclib import AOCLib
 
+
 def travel(from_here, that_way):
     return (from_here[0] + that_way[0],
             from_here[1] + that_way[1])
+
 
 def find_distance(start_square, end_square, max_distance):
     candidates = [(None, start_square)]
@@ -24,7 +26,7 @@ def find_distance(start_square, end_square, max_distance):
                           for direction in directions)
             for new_candidate in neighbours:
                 if (current_map[new_candidate] == '.' and
-                    new_candidate not in visited):
+                        new_candidate not in visited):
                     visited.add(new_candidate)
                     new_candidates.append((new_candidate
                                            if metric == 0
@@ -34,6 +36,7 @@ def find_distance(start_square, end_square, max_distance):
         metric += 1
 
     return None, max_distance + 1
+
 
 puzzle = (2018, 15)
 
@@ -46,7 +49,9 @@ puzzle_input = aoc.get_puzzle_input(puzzle[1], AOCLib.lines_to_list)
 initial_map = {}
 initial_unit_positions = {}
 
+
 reading_order = lambda p: p[0][1]*dungeon_width + p[0][0]
+
 
 infinity = 999999
 start_hit_points = 200
@@ -169,7 +174,7 @@ while not elves_victorious:
                 if unit_positions[victim[0]] <= 0:
 
                     if (unit_type == 'G' and
-                        attack_power['E'] > initial_attempt):
+                            attack_power['E'] > initial_attempt):
                         # If an elf has died and we are doing the second
                         # part of the puzzle, may as well abort!
                         battle_in_progress = False

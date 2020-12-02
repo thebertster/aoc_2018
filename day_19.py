@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 def get_factors(n):
     factors = []
     trial = 1
@@ -9,6 +10,7 @@ def get_factors(n):
             factors.append(n // trial)
         trial += 1
     return factors
+
 
 puzzle = (2018, 19)
 
@@ -57,10 +59,10 @@ for reg_0_value in (0, 1):
             registers[c] = a if op[3] == 'i' else registers[a]
         elif op[:2] == 'gt':
             registers[c] = int((a if op[2] == 'i' else registers[a]) >
-                       (b if op[3] == 'i' else registers[b]))
+                               (b if op[3] == 'i' else registers[b]))
         elif op[:2] == 'eq':
             registers[c] = int((a if op[2] == 'i' else registers[a]) ==
-                       (b if op[3] == 'i' else registers[b]))
+                               (b if op[3] == 'i' else registers[b]))
         else:
             raise ValueError('Unknown opcode')
         pc = registers[pc_reg] + 1

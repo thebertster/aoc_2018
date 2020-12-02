@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 class TuringPots:
     def __init__(self):
         self._pots = set()
@@ -14,8 +15,8 @@ class TuringPots:
 
     def get_pots(self, pot, extent):
         return ''.join('#' if p in self._pots else '.'
-                        for p in range(pot - extent//2,
-                                       pot + extent//2 + 1))
+                       for p in range(pot - extent//2,
+                                      pot + extent//2 + 1))
 
     def start_generation(self):
         self._newpots = self._pots.copy()
@@ -37,6 +38,7 @@ class TuringPots:
     def get_pattern(self):
         leftmost = self.get_extent()[0]
         return [pot - leftmost for pot in self._pots]
+
 
 puzzle = (2018, 12)
 

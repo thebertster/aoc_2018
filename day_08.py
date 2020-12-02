@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 def process_data_structure(raw_ds, index, node, metadata_sum):
     child_nodes = raw_ds[index]
     metadata_len = raw_ds[index + 1]
@@ -16,6 +17,7 @@ def process_data_structure(raw_ds, index, node, metadata_sum):
 
     return index + metadata_len, metadata_sum + sum(node['metadata'])
 
+
 def get_node_value(node):
     children = len(node['child_nodes'])
     if children:
@@ -23,6 +25,7 @@ def get_node_value(node):
                     for child in node['metadata'] if child <= children])
 
     return sum(node['metadata'])
+
 
 puzzle = (2018, 8)
 

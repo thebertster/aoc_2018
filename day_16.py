@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 def process_instruction(op, a, b, c, r):
     if op[:3] == 'add':
         r[c] = r[a] + (b if op[3] == 'i' else r[b])
@@ -19,6 +20,7 @@ def process_instruction(op, a, b, c, r):
                    (b if op[3] == 'i' else r[b]))
     else:
         raise ValueError('Unknown opcode')
+
 
 puzzle = (2018, 16)
 
@@ -41,11 +43,11 @@ end_states = []
 
 for puzzle_block in range(0, len(puzzle_parts[0]), 4):
     start_states.append([int(reg) for reg
-                   in puzzle_parts[0][puzzle_block][9:-1].split(',')])
+                         in puzzle_parts[0][puzzle_block][9:-1].split(',')])
     instructions.append([int(instruction_byte) for instruction_byte
                          in puzzle_parts[0][puzzle_block + 1].split(' ')])
     end_states.append([int(reg) for reg
-                   in puzzle_parts[0][puzzle_block + 2][9:-1].split(',')])
+                       in puzzle_parts[0][puzzle_block + 2][9:-1].split(',')])
 
 opcode_behaves_like = {i: set() for i in range(len(opcodes))}
 behaves_like_count = []
@@ -69,7 +71,7 @@ known_opcodes = {}
 
 while len(known_opcodes) < len(opcodes):
     determined = list(number for number, opcode in
-                  opcode_behaves_like.items() if len(opcode) == 1)
+                      opcode_behaves_like.items() if len(opcode) == 1)
     for number in determined:
         (opcode,) = opcode_behaves_like.pop(number)
         known_opcodes[number] = opcode

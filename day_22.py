@@ -1,6 +1,7 @@
 from lib.aoclib import AOCLib
 from lib.pqueue import PriorityQueue
 
+
 class CaveSystem:
     def __init__(self, target_location, target_depth):
         self.cave_data = {}
@@ -23,9 +24,10 @@ class CaveSystem:
                                               self.cave_data[(xx, yy - 1)][0])
                         erosion_level = (geologic_index + self.depth) % 20183
                         self.cave_data[(xx, yy)] = (erosion_level,
-                                                  erosion_level % 3)
+                                                    erosion_level % 3)
 
         return self.cave_data[location][1]
+
 
 puzzle = (2018, 22)
 

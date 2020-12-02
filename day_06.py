@@ -20,7 +20,7 @@ distance_map = {}
 
 sniffed = set()
 
-areas = {coordinate:0 for coordinate in coordinates}
+areas = {coordinate: 0 for coordinate in coordinates}
 
 for sniff_distance in range(extreme + 1):
     for coordinate in coordinates:
@@ -31,7 +31,7 @@ for sniff_distance in range(extreme + 1):
                           sniff_distance - abs(y)}:
                     candidate = (coordinate[0] + x, coordinate[1] + y)
                     if (candidate[0] >= 0 and candidate[0] <= max_x and
-                        candidate[1] >= 0 and candidate[1] <= max_y):
+                            candidate[1] >= 0 and candidate[1] <= max_y):
                         if candidate in distance_map:
                             if distance_map[candidate][1] == sniff_distance:
                                 areas[distance_map[candidate][0]] -= 1

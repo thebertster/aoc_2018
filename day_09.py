@@ -3,6 +3,7 @@ from lib.aoclib import AOCLib
 # Could use deque for this, but trying to avoid using
 # libraries, even 'simple' ones like 'collections'!
 
+
 class FunkyStructure:
     def __init__(self, initial_value):
         self.pointer = [initial_value]
@@ -22,6 +23,7 @@ class FunkyStructure:
         self.pointer[1][2] = self.pointer[2]
         self.pointer = self.pointer[2][1] = self.pointer[1]
         return value
+
 
 puzzle = (2018, 9)
 

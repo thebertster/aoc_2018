@@ -53,7 +53,7 @@ for change in puzzle_input:
         if one_full_iteration != 0 and (f - q) % one_full_iteration == 0:
             difference = abs((f - q) // one_full_iteration)
             if (smallest_difference is None or
-                difference < smallest_difference):
+                    difference < smallest_difference):
                 smallest_difference = difference
                 repeated_frequency = (max(f, q) if one_full_iteration > 0
                                       else min(f, q))

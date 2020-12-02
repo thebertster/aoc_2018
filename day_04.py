@@ -15,10 +15,10 @@ wake_start_times = []
 
 for entry in puzzle_input:
     entry_date = date(int(entry[1:5]),
-                               int(entry[6:8]),
-                               int(entry[9:11]))
+                      int(entry[6:8]),
+                      int(entry[9:11]))
     entry_time = time(int(entry[12:14]),
-                               int(entry[15:17]))
+                      int(entry[15:17]))
 
     entry_type = entry[19]
 

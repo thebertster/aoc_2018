@@ -41,7 +41,7 @@ while True:
                 square = '#'
         elif square == '#':
             if (adjacent_squares.count('#') == 0 or
-                adjacent_squares.count('|') == 0):
+                    adjacent_squares.count('|') == 0):
                 square = '.'
         new_grid[coords] = square
     grid = new_grid

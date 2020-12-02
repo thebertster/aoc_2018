@@ -1,5 +1,6 @@
 from lib.aoclib import AOCLib
 
+
 def scan_clay(boundary, y, direction):
     while True:
         boundary += direction
@@ -19,6 +20,7 @@ def scan_clay(boundary, y, direction):
             if (boundary + direction, y) not in scan:
                 return None
         scan[(boundary, y)] = '|'
+
 
 puzzle = (2018, 17)
 
